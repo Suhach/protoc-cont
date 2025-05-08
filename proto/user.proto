@@ -5,11 +5,13 @@ option go_package = "github.com/Suhach/protoc-cont/proto/user";
 message User {
   uint32 id    = 1;
   string email = 2;
+  string pass = 3;
 }
 
 // Запрос на создание
 message CreateUserRequest {
   string email = 1;
+  string pass =2;
 }
 message CreateUserResponse {
   User user = 1;
@@ -25,6 +27,7 @@ message GetUserResponse {
 message UpdateUserRequest {
   uint32 id = 1;
   string email = 2;
+  string pass = 3;
 }
 message UpdateUserResponse {
   User user = 1;
