@@ -2,6 +2,8 @@ syntax = "proto3";
 package user;
 option go_package = "github.com/Suhach/protoc-cont/proto/user";
 
+import "google/protobuf/empty.proto";
+
 message User {
   uint32 id    = 1;
   string email = 2;
@@ -15,6 +17,10 @@ message CreateUserRequest {
 }
 message CreateUserResponse {
   User user = 1;
+}
+
+message GetUsersResponse {
+  repeated User user = 1;
 }
 
 message GetUserRequest {
@@ -41,7 +47,8 @@ message DeleteUserResponse {
 }
 service UserService {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
-  rpc GetUser    (GetUserRequest)              returns (GetUserResponse);
+  rpc GetUsers (google.protobuf.Empty) returns (GetUsersResponse);
+  rpc GetUserByID    (GetUserRequest)              returns (GetUserResponse);
   rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
   rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
 }
