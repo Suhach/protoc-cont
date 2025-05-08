@@ -4,7 +4,7 @@
 // - protoc             v4.25.7
 // source: proto/task.proto
 
-package task
+package user
 
 import (
 	context "context"

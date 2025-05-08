@@ -1,8 +1,7 @@
 syntax = "proto3";
 package user;
-option go_package = "github.com/your-org/project-protos/proto/user";
+option go_package = "github.com/Suhach/protoc-cont/proto/user";
 
-// Сущность пользователь (минимум полей)
 message User {
   uint32 id    = 1;
   string email = 2;
