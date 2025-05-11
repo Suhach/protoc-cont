@@ -181,7 +181,7 @@ func (x *CreateUserResponse) GetUser() *User {
 
 type GetUsersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	User          []*User                `protobuf:"bytes,1,rep,name=user,proto3" json:"user,omitempty"`
+	Users         []*User                `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -216,9 +216,9 @@ func (*GetUsersResponse) Descriptor() ([]byte, []int) {
 	return file_proto_user_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetUsersResponse) GetUser() []*User {
+func (x *GetUsersResponse) GetUsers() []*User {
 	if x != nil {
-		return x.User
+		return x.Users
 	}
 	return nil
 }
@@ -517,10 +517,10 @@ const file_proto_user_proto_rawDesc = "" +
 	"\x04pass\x18\x02 \x01(\tR\x04pass\"4\n" +
 	"\x12CreateUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
-	".user.UserR\x04user\"2\n" +
-	"\x10GetUsersResponse\x12\x1e\n" +
-	"\x04user\x18\x01 \x03(\v2\n" +
-	".user.UserR\x04user\" \n" +
+	".user.UserR\x04user\"4\n" +
+	"\x10GetUsersResponse\x12 \n" +
+	"\x05users\x18\x01 \x03(\v2\n" +
+	".user.UserR\x05users\" \n" +
 	"\x0eGetUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
@@ -575,7 +575,7 @@ var file_proto_user_proto_goTypes = []any{
 }
 var file_proto_user_proto_depIdxs = []int32{
 	0,  // 0: user.CreateUserResponse.user:type_name -> user.User
-	0,  // 1: user.GetUsersResponse.user:type_name -> user.User
+	0,  // 1: user.GetUsersResponse.users:type_name -> user.User
 	0,  // 2: user.GetUserResponse.user:type_name -> user.User
 	0,  // 3: user.UpdateUserResponse.user:type_name -> user.User
 	1,  // 4: user.UserService.CreateUser:input_type -> user.CreateUserRequest
