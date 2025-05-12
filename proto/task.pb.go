@@ -4,9 +4,10 @@
 // 	protoc        v4.25.7
 // source: proto/task.proto
 
-package user
+package task
 
 import (
+	user "github.com/Suhach/protoc-cont/proto/user"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -27,7 +28,7 @@ type Task struct {
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	IsDone        bool                   `protobuf:"varint,3,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
 	UserId        uint32                 `protobuf:"varint,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	User          *User                  `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
+	User          *user.User             `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,7 +91,7 @@ func (x *Task) GetUserId() uint32 {
 	return 0
 }
 
-func (x *Task) GetUser() *User {
+func (x *Task) GetUser() *user.User {
 	if x != nil {
 		return x.User
 	}
@@ -608,7 +609,7 @@ const file_proto_task_proto_rawDesc = "" +
 	"\n" +
 	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\x18.task.UpdateTaskResponse\x12?\n" +
 	"\n" +
-	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB*Z(github.com/Suhach/protoc-cont/proto/userb\x06proto3"
+	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB*Z(github.com/Suhach/protoc-cont/proto/taskb\x06proto3"
 
 var (
 	file_proto_task_proto_rawDescOnce sync.Once
@@ -635,7 +636,7 @@ var file_proto_task_proto_goTypes = []any{
 	(*UpdateTaskResponse)(nil), // 8: task.UpdateTaskResponse
 	(*DeleteTaskRequest)(nil),  // 9: task.DeleteTaskRequest
 	(*DeleteTaskResponse)(nil), // 10: task.DeleteTaskResponse
-	(*User)(nil),               // 11: user.User
+	(*user.User)(nil),          // 11: user.User
 }
 var file_proto_task_proto_depIdxs = []int32{
 	11, // 0: task.Task.user:type_name -> user.User
@@ -665,7 +666,6 @@ func file_proto_task_proto_init() {
 	if File_proto_task_proto != nil {
 		return
 	}
-	file_proto_user_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -1,6 +1,6 @@
 syntax = "proto3";
 package task;
-option go_package = "github.com/Suhach/protoc-cont/proto/user";
+option go_package = "github.com/Suhach/protoc-cont/proto/task";
 
 import "proto/user.proto";
 
