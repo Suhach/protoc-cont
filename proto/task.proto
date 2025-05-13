@@ -2,7 +2,7 @@ syntax = "proto3";
 package task;
 option go_package = "github.com/Suhach/protoc-cont/proto/task";
 
-import "proto/user.proto";
+import "user.proto";
 
 message Task {
   uint32 id      = 1;
