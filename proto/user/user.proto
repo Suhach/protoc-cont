@@ -1,13 +1,15 @@
 syntax = "proto3";
 package user;
-option go_package = "github.com/Suhach/protoc-cont/proto";
+option go_package = "github.com/Suhach/protoc-cont/user";
 
 import "google/protobuf/empty.proto";
+import "task/task.proto";
 
 message User {
   uint32 id    = 1;
   string email = 2;
   string pass = 3;
+  task.Task task = 4;
 }
 
 // Запрос на создание

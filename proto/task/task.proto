@@ -1,15 +1,12 @@
 syntax = "proto3";
 package task;
-option go_package = "github.com/Suhach/protoc-cont/proto";
-
-import "proto/user/user.proto";
+option go_package = "github.com/Suhach/protoc-cont/task";
 
 message Task {
   uint32 id      = 1;
   string title   = 2;
   bool is_done = 3;
   uint32 user_id = 4;
-  user.User user = 5;
 }
 
 message CreateTaskRequest {
@@ -24,7 +21,7 @@ message GetTaskRequest {
   uint32 id = 1;
 }
 message GetTaskResponse {
-  Task title = 1;
+  Task task = 1;
 }
 
 message ListTasksRequest {}
