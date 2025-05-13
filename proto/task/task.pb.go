@@ -4,9 +4,11 @@
 // 	protoc        v4.25.7
 // source: task.proto
 
-package proto
+package task
 
 import (
+	"github.com/Suhach/protoc-cont/proto"
+	"github.com/Suhach/protoc-cont/proto/user"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,8 +28,8 @@ type Task struct {
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	IsDone        bool                   `protobuf:"varint,3,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
-	UserId        uint32                 `protobuf:"varint,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	User          *User                  `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
+	UserId        uint32     `protobuf:"varint,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	User          *user.User `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,7 +92,7 @@ func (x *Task) GetUserId() uint32 {
 	return 0
 }
 
-func (x *Task) GetUser() *User {
+func (x *Task) GetUser() *user.User {
 	if x != nil {
 		return x.User
 	}
@@ -637,7 +639,7 @@ var file_task_proto_goTypes = []any{
 	(*UpdateTaskResponse)(nil), // 8: task.UpdateTaskResponse
 	(*DeleteTaskRequest)(nil),  // 9: task.DeleteTaskRequest
 	(*DeleteTaskResponse)(nil), // 10: task.DeleteTaskResponse
-	(*User)(nil),               // 11: user.User
+	(*user.User)(nil),          // 11: user.User
 }
 var file_task_proto_depIdxs = []int32{
 	11, // 0: task.Task.user:type_name -> user.User
@@ -667,7 +669,7 @@ func file_task_proto_init() {
 	if File_task_proto != nil {
 		return
 	}
-	file_user_proto_init()
+	proto.file_user_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
