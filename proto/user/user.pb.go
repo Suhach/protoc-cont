@@ -7,7 +7,7 @@
 package user
 
 import (
-	task "github.com/Suhach/protoc-cont/task"
+	task "github.com/Suhach/protoc-cont/proto/task"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
