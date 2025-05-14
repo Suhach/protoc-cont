@@ -1,6 +1,6 @@
 syntax = "proto3";
 package task;
-option go_package = "github.com/Suhach/protoc-cont/task";
+option go_package = "github.com/Suhach/protoc-cont/proto/task";
 
 message Task {
   uint32 id      = 1;
