@@ -28,7 +28,7 @@ type User struct {
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
 	Pass          string                 `protobuf:"bytes,3,opt,name=pass,proto3" json:"pass,omitempty"`
-	Task          *task.Task             `protobuf:"bytes,4,opt,name=task,proto3" json:"task,omitempty"`
+	Task          []*task.Task           `protobuf:"bytes,4,rep,name=task,proto3" json:"task,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -84,7 +84,7 @@ func (x *User) GetPass() string {
 	return ""
 }
 
-func (x *User) GetTask() *task.Task {
+func (x *User) GetTask() []*task.Task {
 	if x != nil {
 		return x.Task
 	}
@@ -521,7 +521,7 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
 	"\x04pass\x18\x03 \x01(\tR\x04pass\x12\x1e\n" +
-	"\x04task\x18\x04 \x01(\v2\n" +
+	"\x04task\x18\x04 \x03(\v2\n" +
 	".task.TaskR\x04task\"=\n" +
 	"\x11CreateUserRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x12\n" +

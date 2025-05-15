@@ -9,7 +9,7 @@ message User {
   uint32 id    = 1;
   string email = 2;
   string pass = 3;
-  task.Task task = 4;
+  repeated task.Task task = 4;
 }
 
 // Запрос на создание
